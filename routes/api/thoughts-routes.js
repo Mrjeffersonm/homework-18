@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
-    const thought_id = req.body.userId;
+    const thought_id = req.params.id;
     const thought = await Thought.findById(thought_id).exec();
     res.status(200).json(thought);
 });
